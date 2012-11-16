@@ -8,5 +8,11 @@
 
   "content_scripts": [ { "matches": ["https://workflowy.com/*"], "js": ["contentscript.js"] } ],
 
-  "web_accessible_resources": [ "jquery-simulate-ext/libs/bililiteRange.js", "jquery-simulate-ext/libs/jquery.simulate.js", "jquery-simulate-ext/src/jquery.simulate.ext.js", "jquery-simulate-ext/src/jquery.simulate.key-sequence.js", "functions.js", "vimflowy.js" ]
+  "web_accessible_resources": [ 
+    "jquery-simulate-ext/libs/bililiteRange.js", 
+    "jquery-simulate-ext/libs/jquery.simulate.js", 
+    "jquery-simulate-ext/src/jquery.simulate.ext.js", 
+    "jquery-simulate-ext/src/jquery.simulate.key-sequence.js", 
+    "functions.js",
+    "vimflowy.js" ]
 }
