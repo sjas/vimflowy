@@ -62,19 +62,32 @@ jQuery.fn.addGlobalKeyboardShortcuts = function () {
 };
 
 // command functions
-var moveWordForward = function (e) {
-    e.preventDefault();
-
-    var index = indexOfNextCaret($(e.target).getCaret().start, $(e.target).val(), { shift: true });
-    if (index > 0) {
-        $(e.target).setCaret(index);
-    } else {
-        $(e.target).setCaret($(e.target).val().length);
-        $(e.target).rightArrowHandler(); 
-    }
-    return false;
-};
 var commands = {
+    deleteWordBack: function (e) {
+        e.preventDefault();
+
+        var index = indexOfNextCaret($(e.target).getCaret().start, $(e.target).val(), { backward: true, shift: true });
+
+        var n_back = $(e.target).getCaret().start - index;
+
+        for (var i=0; i < n_back; i++) {
+            $(e.target).simulate("key-sequence", {sequence: "{backspace}", triggerKeyEvents: true });
+        }
+        return false;
+    },
+
+    deleteItemBack: function (e) {
+        e.preventDefault();
+
+        var n_back = $(e.target).getCaret().start;
+
+        for (var i=0; i < n_back; i++) {
+            $(e.target).simulate("key-sequence", {sequence: "{backspace}", triggerKeyEvents: true });
+        }
+        return false;
+
+    },
+
     moveWordForward: function (e) {
         e.preventDefault();
 

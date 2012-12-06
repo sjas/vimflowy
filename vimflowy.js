@@ -28,7 +28,11 @@ var normalKeybindings = {
 };
 
 var insertKeybindings = {
-    "esc": enterNormalMode
+    "esc": enterNormalMode,
+
+    // TODO: this breaks tab closing (even more)!
+    "ctrl+w": commands.deleteWordBack,
+    "ctrl+u": commands.deleteItemBack
 };
 
 var alwaysKeybindings = {
